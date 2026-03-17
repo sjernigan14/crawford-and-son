@@ -104,35 +104,60 @@ a:hover {
    Navigation
    ============================================================================ */
 
-nav {
+nav,
+nav.navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
   background-color: var(--bg);
   border-bottom: 1px solid var(--divider);
-  padding: 1rem 2rem;
+}
+
+.nav-container,
+.navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.nav-logo {
+/* Fallback: if nav has no container div, flex directly on nav */
+nav:not(:has(.nav-container)):not(:has(.navbar-container)) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-logo,
+.navbar-logo {
   font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
   font-weight: 900;
   font-size: 18px;
-  uppercase: true;
   letter-spacing: 4px;
   color: var(--teal);
   text-transform: uppercase;
 }
 
+.nav-logo a,
+.navbar-logo a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.nav-menu,
 .nav-links {
   display: flex;
   gap: 2rem;
   list-style: none;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
+.nav-menu a,
 .nav-links a {
   font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
   font-weight: 900;
@@ -143,6 +168,7 @@ nav {
   transition: color 0.3s ease;
 }
 
+.nav-menu a:hover,
 .nav-links a:hover {
   color: var(--teal-light);
 }
@@ -166,6 +192,7 @@ nav {
   color: var(--white);
 }
 
+.hamburger,
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -173,8 +200,10 @@ nav {
   cursor: pointer;
   background: none;
   border: none;
+  padding: 0;
 }
 
+.hamburger span,
 .nav-hamburger span {
   width: 25px;
   height: 2px;
@@ -706,6 +735,7 @@ footer {
     padding: 1rem;
   }
 
+  .nav-menu,
   .nav-links {
     display: none;
     position: absolute;
@@ -717,24 +747,30 @@ footer {
     background-color: var(--bg);
     padding: 1.5rem;
     border-bottom: 1px solid var(--divider);
+    list-style: none;
   }
 
+  .nav-menu.active,
   .nav-links.active {
     display: flex;
   }
 
+  .hamburger,
   .nav-hamburger {
     display: flex;
   }
 
+  .hamburger.active span:nth-child(1),
   .nav-hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(8px, 8px);
   }
 
+  .hamburger.active span:nth-child(2),
   .nav-hamburger.active span:nth-child(2) {
     opacity: 0;
   }
 
+  .hamburger.active span:nth-child(3),
   .nav-hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
   }
