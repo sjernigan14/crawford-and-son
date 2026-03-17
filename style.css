@@ -98,7 +98,7 @@ nav.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -116,6 +116,13 @@ nav.navbar {
 .navbar-logo a {
   color: inherit;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.nav-logo img,
+.navbar-logo img {
+  height: 120px;
+  width: auto;
 }
 
 .nav-menu {
