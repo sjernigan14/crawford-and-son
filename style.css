@@ -171,6 +171,7 @@ a.nav-link {
 
 .hero {
   width: 100%;
+  max-width: 100%;
   min-height: 80vh;
   background-size: cover;
   background-position: center;
@@ -181,6 +182,7 @@ a.nav-link {
   position: relative;
   text-align: center;
   color: var(--white);
+  padding: 0;
 }
 .hero::before {
   content: '';
@@ -191,6 +193,7 @@ a.nav-link {
 
 .hero-section {
   width: 100%;
+  max-width: 100%;
   min-height: 50vh;
   position: relative;
   display: flex;
@@ -198,6 +201,7 @@ a.nav-link {
   justify-content: center;
   overflow: hidden;
   background-color: var(--bg);
+  padding: 0;
 }
 .hero-section .hero-image {
   width: 100%;
@@ -242,6 +246,7 @@ a.nav-link {
 }
 
 .about-hero {
+  max-width: 100%;
   padding: 6rem 2rem;
   text-align: center;
 }
@@ -256,6 +261,7 @@ a.nav-link {
 }
 
 .menu-header {
+  max-width: 100%;
   padding: 4rem 2rem;
   text-align: center;
 }
