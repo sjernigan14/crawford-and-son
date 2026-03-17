@@ -1,0 +1,849 @@
+/* ============================================================================
+   Crawford & Son Restaurant — Global Stylesheet
+   ============================================================================ */
+
+/* ============================================================================
+   @font-face Declarations
+   ============================================================================ */
+
+@font-face {
+  font-family: 'Sackers';
+  src: url('fonts/SackersGothicStd-Heavy.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sackers';
+  src: url('fonts/SackersGothicStd-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('fonts/DINNextLTPro-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('fonts/DINNextLTPro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DIN';
+  src: url('fonts/DINNextLTPro-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* ============================================================================
+   CSS Variables (Color Palette)
+   ============================================================================ */
+
+:root {
+  --bg: #24272A;
+  --bg-alt: #FAF9F5;
+  --teal: #4F8596;
+  --teal-light: #6BA3B5;
+  --teal-dark: #3D6B79;
+  --text: #88898D;
+  --text-light: #B0B1B5;
+  --text-dark: #141413;
+  --white: #FFFFFF;
+  --footer-bg: #383C40;
+  --divider: #555;
+}
+
+/* ============================================================================
+   Reset & Base Styles
+   ============================================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'DIN', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--teal-light);
+}
+
+/* ============================================================================
+   Navigation
+   ============================================================================ */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--divider);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  uppercase: true;
+  letter-spacing: 4px;
+  color: var(--teal);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--teal);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--teal-light);
+}
+
+.btn-reservations {
+  border: 1px solid var(--teal);
+  padding: 0.75rem 1.5rem;
+  color: var(--teal);
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-reservations:hover {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.nav-hamburger span {
+  width: 25px;
+  height: 2px;
+  background-color: var(--teal);
+  transition: all 0.3s ease;
+}
+
+/* ============================================================================
+   Hero Section
+   ============================================================================ */
+
+.hero {
+  width: 100%;
+  min-height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--bg-alt);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.hero p {
+  font-family: 'DIN', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-size: 18px;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+/* ============================================================================
+   Typography
+   ============================================================================ */
+
+h1 {
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--bg-alt);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--bg-alt);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+h4, h5, h6 {
+  font-family: 'DIN', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+p {
+  font-family: 'DIN', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================================
+   Sections
+   ============================================================================ */
+
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+section.full-width {
+  max-width: 100%;
+  padding: 4rem;
+}
+
+/* ============================================================================
+   Buttons & CTAs
+   ============================================================================ */
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--teal);
+  color: var(--white);
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--teal-light);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--teal);
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 1rem 2rem;
+  border: 1px solid var(--teal);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+/* ============================================================================
+   Menu Section
+   ============================================================================ */
+
+.menu-section {
+  padding: 4rem 2rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.menu-item {
+  border-bottom: 1px solid var(--divider);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.menu-item-name {
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: var(--bg-alt);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.menu-item-price {
+  font-family: 'DIN', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 400;
+  color: var(--teal);
+  margin-left: auto;
+}
+
+.menu-item-description {
+  font-family: 'DIN', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-size: 14px;
+  color: var(--text-light);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ============================================================================
+   Press Section
+   ============================================================================ */
+
+.press-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.press-card {
+  border: 1px solid var(--divider);
+  border-radius: 4px;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.press-card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--teal);
+}
+
+.press-date {
+  font-family: 'DIN', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--teal);
+  margin-bottom: 0.5rem;
+}
+
+.press-source {
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: var(--bg-alt);
+  margin-bottom: 1rem;
+}
+
+.press-excerpt {
+  font-family: 'DIN', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.press-link {
+  font-family: 'DIN', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--teal);
+}
+
+.press-link:hover {
+  color: var(--teal-light);
+}
+
+/* ============================================================================
+   Footer
+   ============================================================================ */
+
+footer {
+  background-color: var(--footer-bg);
+  color: var(--text-light);
+  padding: 4rem 2rem 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--divider);
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section h3 {
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-section a {
+  color: var(--text-light);
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--bg-alt);
+}
+
+.footer-contact {
+  font-family: 'DIN', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer-contact p {
+  margin-bottom: 0.5rem;
+}
+
+/* Sister Restaurants Section */
+
+.footer-sisters {
+  border-top: 1px solid var(--divider);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.footer-sisters h3 {
+  font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--teal);
+  margin-bottom: 1.5rem;
+}
+
+.sister-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sister-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  transition: all 0.3s ease;
+}
+
+.sister-logo img {
+  max-height: 50px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.sister-logo:hover img {
+  opacity: 1;
+}
+
+.sister-logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Social Icons */
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+/* Footer Bottom */
+
+.footer-bottom {
+  border-top: 1px solid var(--divider);
+  padding-top: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-copyright {
+  font-family: 'DIN', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================================================
+   Animations
+   ============================================================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  animation: fadeIn 0.8s ease;
+}
+
+/* ============================================================================
+   Utility Classes
+   ============================================================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.text-light {
+  color: var(--text-light);
+}
+
+.text-dark {
+  color: var(--text-dark);
+}
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.mt-4 { margin-top: 4rem; }
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+.mb-4 { margin-bottom: 4rem; }
+
+.pt-1 { padding-top: 1rem; }
+.pt-2 { padding-top: 2rem; }
+.pt-3 { padding-top: 3rem; }
+.pt-4 { padding-top: 4rem; }
+
+.pb-1 { padding-bottom: 1rem; }
+.pb-2 { padding-bottom: 2rem; }
+.pb-3 { padding-bottom: 3rem; }
+.pb-4 { padding-bottom: 4rem; }
+
+/* ============================================================================
+   Credit Card Surcharge Notice
+   ============================================================================ */
+
+.surcharge-notice {
+  font-family: 'DIN', Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-size: 12px;
+  color: var(--text-light);
+  font-style: italic;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+/* ============================================================================
+   Responsive Design
+   ============================================================================ */
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--bg);
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .nav-hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .nav-hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .sister-logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+  nav {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-logo {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .hero {
+    min-height: 60vh;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  section.full-width {
+    padding: 2rem 1rem;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .menu-item-name {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-item-price {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .sister-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 11px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .footer-logo {
+    font-size: 14px;
+  }
+}
