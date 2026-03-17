@@ -1,0 +1,32 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="64" height="64" fill="#24272A"/>
+
+  <!-- Teal accent circle border -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#4F8596" stroke-width="2"/>
+
+  <!-- Monogram "C&S" -->
+  <g transform="translate(32, 32)">
+    <!-- "C" letter -->
+    <path d="M -8 -10 A 10 10 0 0 1 -8 10"
+          fill="none"
+          stroke="#4F8596"
+          stroke-width="2.5"
+          stroke-linecap="round"/>
+
+    <!-- Ampersand symbol -->
+    <text x="2" y="4"
+          font-family="Georgia, serif"
+          font-size="14"
+          font-weight="bold"
+          fill="#4F8596">&amp;</text>
+
+    <!-- "S" letter -->
+    <path d="M 8 -10 Q 12 -10 12 -6 Q 12 -2 8 -2 Q 4 -2 4 2 Q 4 6 8 6 Q 12 6 12 10"
+          fill="none"
+          stroke="#4F8596"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+  </g>
+</svg>
