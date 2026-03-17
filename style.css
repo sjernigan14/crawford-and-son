@@ -41,8 +41,8 @@
   --teal: #4F8596;
   --teal-light: #6BA3B5;
   --teal-dark: #3D6B79;
-  --text: #88898D;
-  --text-light: #B0B1B5;
+  --text: #B5B6BA;
+  --text-light: #D0D1D5;
   --text-dark: #141413;
   --white: #FFFFFF;
   --footer-bg: #383C40;
@@ -289,7 +289,7 @@ h1 {
 }
 h2 {
   font-family: 'Sackers', Futura, 'Trebuchet MS', Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 900;
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 3px;
